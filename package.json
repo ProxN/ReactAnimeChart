@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "node server.js",
-    "build": "next build && next export",
-    "start": "NODE_ENV=production node server.js && serve ./out"
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "export": "npm run build && next export"
 
     
   },
