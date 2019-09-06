@@ -3,7 +3,7 @@ module.exports = withCSS({
   cssModules: true,
   exportPathMap: function () {
     return {
-        '/': { page: '/',query:{name:'SUMMER'} },
+        '/': { page: '/anime',query:{name:'SUMMER'} },
         '/anime': { page: '/anime'},
     }
   }
