@@ -4,10 +4,10 @@ module.exports = withCSS({
   exportPathMap: function() {
     return {
       "/": { page: "/anime", query: { name: "FALL" } },
-      "/winter": { page: "/anime", query: { name: "WINTER" } },
-      "/spring": { page: "/anime", query: { name: "SPRING" } },
-      "/summer": { page: "/anime", query: { name: "SUMMER" } },
-      "/fall": { page: "/anime", query: { name: "FALL" } }
+      "/WINTER": { page: "/anime", query: { name: "WINTER" } },
+      "/SPRING": { page: "/anime", query: { name: "SPRING" } },
+      "/SUMMER": { page: "/anime", query: { name: "SUMMER" } },
+      "/FALL": { page: "/anime", query: { name: "FALL" } }
     };
   }
 });
