@@ -7,10 +7,10 @@ import {
   HeaderContent
 } from "../styles/HeaderStyles";
 import Switch from "react-switch";
-import {ThemeContext} from '../contexts/theme.context';
+import { ThemeContext } from "../contexts/theme.context";
 
 function Header() {
-  const {isDarkMode,changeTheme} = useContext(ThemeContext);
+  const { isDarkMode, changeTheme } = useContext(ThemeContext);
   return (
     <HeaderContainer>
       <HeaderContent>
@@ -18,16 +18,16 @@ function Header() {
           Anime.<span>Chart</span>
         </Heading>
         <div style={{ display: "flex", alignItems: "center" }}>
-          <Link href='/anime?name=WINTER' as='/a/WINTER'>
+          <Link href='/anime?name=WINTER' as='/WINTER'>
             <LinkTitle>WINTER</LinkTitle>
           </Link>
-          <Link href='/anime?name=SPRING' as='/a/SPRING'>
+          <Link href='/anime?name=SPRING' as='/SPRING'>
             <LinkTitle>SPRING</LinkTitle>
           </Link>
-          <Link href='/anime?name=SUMMER' as='/a/SUMMER'>
+          <Link href='/anime?name=SUMMER' as='/SUMMER'>
             <LinkTitle>SUMMER</LinkTitle>
           </Link>
-          <Link href='/anime?name=FALL' as='/a/FALL'>
+          <Link href='/anime?name=FALL' as='/FALL'>
             <LinkTitle>FALL</LinkTitle>
           </Link>
           <Switch
