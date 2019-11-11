@@ -15,9 +15,6 @@ app.prepare().then(() => {
     }
     next();
   });
-  server.get("/", (req, res) => {
-    res.redirect(`/${season}`);
-  });
   server.get("*", (req, res) => {
     return handle(req, res);
   });

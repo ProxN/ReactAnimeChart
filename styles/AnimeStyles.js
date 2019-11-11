@@ -11,10 +11,23 @@ const AnimeHeader = styled.div`
 `;
 const AnimeDesc = styled.div`
   height: 150px;
-  overflow-y: hidden;
+  overflow-y: scroll;
   padding: 15px;
   font-size: 1.3rem;
   margin: 10px 0;
+  scrollbar-color: #1c1c21 transparent;
+  scrollbar-width: thin;
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #1c1c21;
+  }
 `;
 const GridCell = styled.div`
   grid-column-start: ${props => props.left};
@@ -26,7 +39,7 @@ const Span = styled.span`
   color: ${props => (props.blue ? "#1e90ff" : "#6e859e")};
 `;
 const TimeCount = styled.span`
-  font-size: 18px;
+  font-size: 15px;
   display: block;
   font-weight: 500;
 

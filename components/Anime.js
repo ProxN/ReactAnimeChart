@@ -1,4 +1,4 @@
-import React,{memo} from "react";
+import React, { memo } from "react";
 import ReactHtmlParser from "react-html-parser";
 import { FaRegStar, FaRegHeart, FaRegPlayCircle } from "react-icons/fa";
 import useToggler from "../hooks/useToggle";
@@ -21,7 +21,7 @@ import {
 import AddIcon from "./Icon";
 import DropDown from "./Dropdown";
 
-function Anime({ anime,darkTheme }) {
+function Anime({ anime, darkTheme }) {
   const [showDropDown, toggle] = useToggler(false);
   return (
     <AnimeContainer isDark={darkTheme}>
@@ -33,7 +33,13 @@ function Anime({ anime,darkTheme }) {
       <Overlay left={1} top={1}>
         <a href={anime.siteUrl}>{anime.title.romaji}</a>
         <Studio>
-          <a href={anime.formatStudio ? anime.formatStudio.siteUrl : anime.siteUrl}> {anime.formatStudio ? anime.formatStudio.name :''}</a>
+          <a
+            href={
+              anime.formatStudio ? anime.formatStudio.siteUrl : anime.siteUrl
+            }>
+            {" "}
+            {anime.formatStudio ? anime.formatStudio.name : ""}
+          </a>
         </Studio>
       </Overlay>
       <AnimeRank left={1} top={1}>
@@ -79,11 +85,7 @@ function Anime({ anime,darkTheme }) {
       <AddIcon toggle={toggle} id={anime.id} />
 
       {showDropDown && (
-        <DropDown
-          toggle={toggle}
-          id={anime.id}
-          leaveHandler={toggle}
-        />
+        <DropDown toggle={toggle} id={anime.id} leaveHandler={toggle} />
       )}
     </AnimeContainer>
   );
