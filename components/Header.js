@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
-import Link from "next/link";
 import {
   LinkTitle,
   Heading,
   HeaderContainer,
-  HeaderContent
+  HeaderContent,
+  LinksContainer
 } from "../styles/HeaderStyles";
 import Switch from "react-switch";
 import { ThemeContext } from "../contexts/theme.context";
-
+import Link from "../lib/withRouter";
 function Header() {
   const { isDarkMode, changeTheme } = useContext(ThemeContext);
   return (
@@ -17,7 +17,10 @@ function Header() {
         <Heading href='/'>
           Anime.<span>Chart</span>
         </Heading>
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <LinksContainer>
+          {/* <WithRouter href='/anime?name=WINTER' as='/WINTER'>
+            <LinkTitle>test</LinkTitle>
+          </WithRouter> */}
           <Link href='/anime?name=WINTER' as='/WINTER'>
             <LinkTitle>WINTER</LinkTitle>
           </Link>
@@ -50,7 +53,7 @@ function Header() {
             }}>
             Dark Mode
           </span>
-        </div>
+        </LinksContainer>
       </HeaderContent>
     </HeaderContainer>
   );
