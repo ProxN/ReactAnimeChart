@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import sizes from '../helpers/Sizes';
+import sizes from "../helpers/Sizes";
 
 const AnimeHeader = styled.div`
   display: grid;
@@ -8,7 +8,6 @@ const AnimeHeader = styled.div`
   color: #333;
   padding: 15px;
   height: 40px;
-  
 `;
 const AnimeDesc = styled.div`
   height: 150px;
@@ -25,22 +24,20 @@ const Span = styled.span`
   font-size: 13px;
   font-weight: 400;
   color: ${props => (props.blue ? "#1e90ff" : "#6e859e")};
-  
 `;
 const TimeCount = styled.span`
   font-size: 18px;
   display: block;
   font-weight: 500;
-  
+
   color: #6e859e;
-  ${sizes.down('xs')}{
-    font-size:15px;
-   
+  ${sizes.down("xs")} {
+    font-size: 15px;
   }
 `;
 
 const AnimeHeaderContent = styled.div`
-  ${sizes.down('xs')}{
+  ${sizes.down("xs")} {
     grid-column: 1 / -1;
   }
 `;
@@ -64,52 +61,58 @@ const DropDown = styled(GridCell)`
   border-radius: 3px;
   ul {
     list-style: none;
-    transition: all .4s;
+    transition: all 0.4s;
   }
 `;
 
 const AnimeContainer = styled.div`
   display: grid;
-  width: 460px;
+  width: 420px;
   height: 300px;
   grid-template-columns: 180px auto;
-  background-color: ${props => props.isDark ? '#2c2c33' : 'rgb(255, 255, 255)'};
+  background-color: ${props =>
+    props.isDark ? "#2c2c33" : "rgb(255, 255, 255)"};
   /* box-shadow: 0 5px 10px rgba(#000, 0.1); */
-  box-shadow: ${props => props.isDark ? 'box-shadow: 3px 6px 21px -7px rgba(0,0,0,1)' : 'rgba(190, 190, 190, 0.5) 0px 2px 2px 0px'};
+  box-shadow: ${props =>
+    props.isDark
+      ? "box-shadow: 3px 6px 21px -7px rgba(0,0,0,1)"
+      : "rgba(190, 190, 190, 0.5) 0px 2px 2px 0px"};
   border-radius: 3px;
   
   ${DropDown}{
-    background-color: ${props => props.isDark ? '#2c2c33' : 'rgb(255, 255, 255)'};
-    color:${props => props.isDark ? 'rgba(228, 228, 228,.8)' :'#333' };
+    background-color: ${props =>
+      props.isDark ? "#2c2c33" : "rgb(255, 255, 255)"};
+    color:${props => (props.isDark ? "rgba(228, 228, 228,.8)" : "#333")};
   }
   ${AnimeHeader}{
-  border-bottom: 1px solid ${ props => props.isDark ? 'rgba(20,20,24,.3)' : '#e5e5e5'};
+  border-bottom: 1px solid ${props =>
+    props.isDark ? "rgba(20,20,24,.3)" : "#e5e5e5"};
 
   }
   ${AnimeGenres}{
-    background-color:${props => props.isDark ? 'rgba(36,36,42,.9)' : 'rgba(41, 41, 41, 0.9)'};
+    background-color:${props =>
+      props.isDark ? "rgba(36,36,42,.9)" : "rgba(41, 41, 41, 0.9)"};
   }
 ${AnimeDesc},${Span},${TimeCount}{
-    color : ${props => props.isDark ? 'rgba(228, 228, 228,.8)' : '#6e859e'}
+    color : ${props => (props.isDark ? "rgba(228, 228, 228,.8)" : "#6e859e")}
   }
-  ${sizes.down('lg')}{
+  ${sizes.down("lg")}{
     width: 68rem;
    
   }
-  ${sizes.down('sm')}{
+  ${sizes.down("sm")}{
     width: 50rem;
    
   }
-  ${sizes.down('xs')}{
+  ${sizes.down("xs")}{
     width: 39rem;   
   }
-  ${sizes.down('xs1')}{
+  ${sizes.down("xs1")}{
     width: 31rem;
     grid-template-columns: 140px auto;
 
   }
 `;
-
 
 const Img = styled.img`
   width: 100%;
@@ -122,7 +125,7 @@ const Overlay = styled(GridCell)`
   padding: 10px;
   background-color: rgba(41, 41, 41, 0.9);
   width: 160px;
-  z-index:20;
+  z-index: 20;
   a {
     font-weight: 500;
     color: #fff;
@@ -132,10 +135,9 @@ const Overlay = styled(GridCell)`
 
     display: block;
   }
-  ${sizes.down('xs1')}{
+  ${sizes.down("xs1")} {
     width: 31rem;
     width: 120px;
-
   }
 `;
 const Studio = styled.div`
@@ -166,18 +168,14 @@ const AnimeRank = styled(GridCell)`
   }
 `;
 
-
-
-
 const AnimeTrailer = styled.div`
   grid-column: 2 / -1;
   height: 50px;
   position: relative;
   cursor: pointer;
   border-radius: 2px;
-  ${sizes.down('xs')}{
-    display:none;
-   
+  ${sizes.down("xs")} {
+    display: none;
   }
   img {
     border-radius: 2px;
@@ -192,15 +190,14 @@ const AnimeTrailer = styled.div`
   }
 `;
 
-
 const ListItem = styled.li`
   display: inline-block;
   margin-right: 10px;
   font-size: 1.2rem;
-  font-weight:400;
+  font-weight: 400;
   color: #eff7fb;
-  padding:1px 5px;
-  border:1px dashed ${props => props.color};
+  padding: 1px 5px;
+  border: 1px dashed ${props => props.color};
 `;
 const AddIcon = styled(GridCell)`
   color: #fff;
@@ -215,10 +212,9 @@ const AddIcon = styled(GridCell)`
   align-items: center;
   justify-content: center;
   background: ${props => props.color};
-  font-size: .8rem;
+  font-size: 0.8rem;
   cursor: pointer;
 `;
-
 
 const DropDownItem = styled.li`
   font-size: 13px;
@@ -229,9 +225,9 @@ const DropDownItem = styled.li`
   align-items: center;
   transition: all 0.4s;
   padding: 6px 10px;
-  :hover{
-      background:#1e90ff;
-      color:#fff;
+  :hover {
+    background: #1e90ff;
+    color: #fff;
   }
 
   svg {
@@ -259,7 +255,7 @@ export {
   Studio,
   AnimeRank,
   AnimeTrailer,
-    Img,
+  Img,
   DropDownItem,
   AnimeHeaderContent
 };

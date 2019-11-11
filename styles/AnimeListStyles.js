@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
-import sizes from '../helpers/Sizes';
-
+import sizes from "../helpers/Sizes";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, 46rem);
+  grid-template-columns: repeat(auto-fit, 42rem);
   justify-content: center;
   grid-column-gap: 50px;
   grid-row-gap: 30px;
@@ -13,23 +12,23 @@ const Container = styled.div`
   padding-top: 30px;
   padding-bottom: 30px;
 
-  ${sizes.down('lg')}{
+  ${sizes.down("lg")} {
     grid-template-columns: repeat(auto-fit, 68rem);
   }
-  ${sizes.down('sm')}{
+  ${sizes.down("sm")} {
     grid-template-columns: repeat(auto-fit, 50rem);
   }
-  ${sizes.down('xs')}{
+  ${sizes.down("xs")} {
     grid-template-columns: repeat(auto-fit, 39rem);
   }
-  ${sizes.down('xs1')}{
-    grid-template-columns: repeat(auto-fit, 31rem);
+  ${sizes.down("xs1")} {
+    grid-template-columns: repeat(auto-fit, 30rem);
   }
 `;
 
 const Heading = styled.h2`
   font-size: 2.4rem;
-  color: ${props => props.isDark ? '#fff' : '#333'};
+  color: ${props => (props.isDark ? "#fff" : "#333")};
   grid-row: 1 /2;
   grid-column: 1 / -1;
   position: relative;
