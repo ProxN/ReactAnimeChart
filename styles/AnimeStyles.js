@@ -39,7 +39,7 @@ const Span = styled.span`
   color: ${props => (props.blue ? "#1e90ff" : "#6e859e")};
 `;
 const TimeCount = styled.span`
-  font-size: 15px;
+  font-size: 13px;
   display: block;
   font-weight: 500;
 
@@ -80,12 +80,14 @@ const DropDown = styled(GridCell)`
 
 const AnimeContainer = styled.div`
   display: grid;
-  width: 420px;
+  width: 390px;
   height: 300px;
   grid-template-columns: 180px auto;
   background-color: ${props =>
     props.isDark ? "#2c2c33" : "rgb(255, 255, 255)"};
   /* box-shadow: 0 5px 10px rgba(#000, 0.1); */
+
+  
   box-shadow: ${props =>
     props.isDark
       ? "box-shadow: 3px 6px 21px -7px rgba(0,0,0,1)"
@@ -109,6 +111,7 @@ const AnimeContainer = styled.div`
 ${AnimeDesc},${Span},${TimeCount}{
     color : ${props => (props.isDark ? "rgba(228, 228, 228,.8)" : "#6e859e")}
   }
+
   ${sizes.down("lg")}{
     width: 68rem;
    
@@ -118,7 +121,7 @@ ${AnimeDesc},${Span},${TimeCount}{
    
   }
   ${sizes.down("xs")}{
-    width: 39rem;   
+    width: 37rem;   
   }
   ${sizes.down("xs1")}{
     width: 31rem;

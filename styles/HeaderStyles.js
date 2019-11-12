@@ -4,6 +4,7 @@ import sizes from "../helpers/Sizes";
 const HeaderContainer = styled.div`
   height: 64px;
   background: #181a16;
+  padding: 0 20px;
 `;
 
 const LinksContainer = styled.div`

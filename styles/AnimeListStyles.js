@@ -4,7 +4,7 @@ import sizes from "../helpers/Sizes";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, 42rem);
+  grid-template-columns: repeat(auto-fit, 39rem);
   justify-content: center;
   grid-column-gap: 50px;
   grid-row-gap: 30px;
@@ -15,14 +15,16 @@ const Container = styled.div`
   ${sizes.down("lg")} {
     grid-template-columns: repeat(auto-fit, 68rem);
   }
+
   ${sizes.down("sm")} {
     grid-template-columns: repeat(auto-fit, 50rem);
   }
+
   ${sizes.down("xs")} {
-    grid-template-columns: repeat(auto-fit, 39rem);
+    grid-template-columns: repeat(auto-fit, 37rem);
   }
   ${sizes.down("xs1")} {
-    grid-template-columns: repeat(auto-fit, 30rem);
+    grid-template-columns: repeat(auto-fit, 31rem);
   }
 `;
 

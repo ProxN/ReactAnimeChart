@@ -18,9 +18,6 @@ function Header() {
           Anime.<span>Chart</span>
         </Heading>
         <LinksContainer>
-          {/* <WithRouter href='/anime?name=WINTER' as='/WINTER'>
-            <LinkTitle>test</LinkTitle>
-          </WithRouter> */}
           <Link href='/anime?name=WINTER' as='/WINTER'>
             <LinkTitle>WINTER</LinkTitle>
           </Link>
