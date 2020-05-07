@@ -2,26 +2,22 @@
 
 *,
 *::before,
-*::after{
+*::after {
     margin: 0;
     padding: 0;
 
 }
 
-body{
+body {
     font-weight: 300;
     color: #f9f7f6;
     line-height: 1.6;
-    background-color:#F0F0F0;
+    background-color: #F0F0F0;
     font-family: "Roboto", sans-serif;
 
 }
-html{
+
+html {
     box-sizing: border-box;
     font-size: 62.5%;
-}
-
-  
-.active{
-    color:red;
 }
