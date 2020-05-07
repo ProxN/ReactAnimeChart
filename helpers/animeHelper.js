@@ -1,46 +1,46 @@
-import convert from "convert-seconds-to-human";
+const convert = require('convert-seconds-to-human');
 
 // List Of animes Types
-const types = ["TV", "MOVIE", "TV_SHORT", "ONA", "OVA", "MUSIC", "SPECIAL"];
+const types = ['TV', 'MOVIE', 'TV_SHORT', 'ONA', 'OVA', 'MUSIC', 'SPECIAL'];
 const months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec"
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
 ];
 
-const animeDate = date => {
-  const day = date.day ? date.day : "";
+const animeDate = (date) => {
+  const day = date.day ? date.day : '';
   return `${months[date.month - 1]} ${day}, ${date.year}`;
 };
 
 const animeEpisode = (nextAiringEpisode, episodes) => {
   // check if Next episode exists or not
-  const checkEp = nextAiringEpisode ? nextAiringEpisode.episode : "??";
+  const checkEp = nextAiringEpisode ? nextAiringEpisode.episode : '??';
   // check Total Episodes
-  const totalEp = episodes !== null ? episodes : "??";
+  const totalEp = episodes !== null ? episodes : '??';
   return `Episode ${checkEp} of ${totalEp} in`;
 };
 
 // get remainingTime for next epiosde
-const remainingTime = sec => {
+const remainingTime = (sec) => {
   // convert seconds to date
-  const { days, hours, minutes } = convert(sec, "cal");
+  const { days, hours, minutes } = convert(sec, 'cal');
 
   // check Text content;
-  const day = days > 1 ? "days" : "day";
-  const hour = hours > 1 ? "hours" : "hour";
-  const min = minutes > 1 ? "mins" : "min";
+  const day = days > 1 ? 'days' : 'day';
+  const hour = hours > 1 ? 'hours' : 'hour';
+  const min = minutes > 1 ? 'mins' : 'min';
 
-  let timeCount = "";
+  let timeCount = '';
   if (days > 0 && hours > 0) {
     // 10 Days, 10 hours
     timeCount = `${days} ${day}, ${hours} ${hour}`;
@@ -57,18 +57,18 @@ const remainingTime = sec => {
   return timeCount;
 };
 
-const formatAnime = anime => {
+const formatAnime = (anime) => {
   let newAnime = { ...anime };
-  const { startDate, nextAiringEpisode, episodes, status,rankings } = anime;
-   
-  const rank = rankings.length > 0 ? rankings[rankings.length - 1].rank :'';
+  const { startDate, nextAiringEpisode, episodes, status, rankings } = anime;
+
+  const rank = rankings.length > 0 ? rankings[rankings.length - 1].rank : '';
 
   switch (status) {
-    case "FINISHED":
+    case 'FINISHED':
       newAnime.formatTime = animeDate(startDate);
       newAnime.formatEpiosde = `${episodes} Ep aired on`;
       break;
-    case "RELEASING":
+    case 'RELEASING':
       // Check if  NextAiringEpisode not null
       const checkAiring = nextAiringEpisode
         ? remainingTime(nextAiringEpisode.timeUntilAiring)
@@ -76,13 +76,13 @@ const formatAnime = anime => {
       newAnime.formatTime = checkAiring;
       newAnime.formatEpiosde = animeEpisode(nextAiringEpisode, episodes);
       break;
-    case "NOT_YET_RELEASED":
-      newAnime.formatEpiosde = 'NOT YET RELEASED'
+    case 'NOT_YET_RELEASED':
+      newAnime.formatEpiosde = 'NOT YET RELEASED';
       newAnime.formatTime = animeDate(startDate);
       break;
     default:
-      newAnime.formatTime = '??'
-      newAnime.formatEpiosde = '??'
+      newAnime.formatTime = '??';
+      newAnime.formatEpiosde = '??';
       break;
   }
   const isStudio = anime.studios ? anime.studios.nodes[0] : {};
@@ -91,7 +91,7 @@ const formatAnime = anime => {
   return newAnime;
 };
 
-export const animesByType = animes => {
+const animesByType = (animes) => {
   // create new list of each anime type
   let newAnimeList = {};
 
@@ -99,27 +99,32 @@ export const animesByType = animes => {
     newAnimeList[type] = [];
   }
   for (let anime of animes) {
-    const type = anime.format;
-    // add anime to arr based on type
-    newAnimeList[type].push(formatAnime(anime));
+    if (anime.format) {
+      const type = anime.format;
+      // add anime to arr based on type
+      newAnimeList[type].push(formatAnime(anime));
+    }
   }
   return newAnimeList;
 };
 
+// Get Curr Season
 
-
-// Get Curr Season 
-
-export const getSeason  = () =>{
+const getSeason = () => {
   const date = new Date();
   const month = date.getMonth();
-  if(month < 3){
-    return 'WINTER'
-  }else if(month < 6){
-    return 'SPRING'
-  }else if(month <9){
-    return 'SUMMER'
-  } else{
-    return 'FALL'
-  };
-}
+  if (month < 3) {
+    return 'WINTER';
+  } else if (month < 6) {
+    return 'SPRING';
+  } else if (month < 9) {
+    return 'SUMMER';
+  } else {
+    return 'FALL';
+  }
+};
+
+module.exports = {
+  getSeason,
+  animesByType,
+};

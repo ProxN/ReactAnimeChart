@@ -1,10 +1,10 @@
-import React from "react";
-import withApollo from "../lib/withApollo";
-import AnimeApp from "../components/AnimeApp";
-import "./index.css";
-import Header from "../components/Header";
-import { ThemeProvider } from "../contexts/theme.context";
-import PageContent from "../components/PageContent";
+import React from 'react';
+import withApollo from '../lib/withApollo';
+import AnimeApp from '../components/AnimeApp';
+import './index.css';
+import Header from '../components/Header';
+import { ThemeProvider } from '../contexts/theme.context';
+import PageContent from '../components/PageContent';
 
 function Anime({ isServer, query }) {
   return (
