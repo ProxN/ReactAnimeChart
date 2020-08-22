@@ -15,6 +15,9 @@ app.prepare().then(() => {
     const name = getSeason();
     app.render(req, res, '/anime', { name });
   });
+  server.get('/:name', (req, res) => {
+    app.render(req, res, '/anime', { name: req.params.name });
+  });
   server.get('*', (req, res) => {
     return handle(req, res);
   });
