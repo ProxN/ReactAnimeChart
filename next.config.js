@@ -4,6 +4,10 @@ module.exports = withCSS({
   exportPathMap: function () {
     return {
       '/': { page: '/anime' },
+      '/WINTER': { page: '/anime' },
+      '/SPRING': { page: '/anime' },
+      '/FALL': { page: '/anime' },
+      '/SUMMER': { page: '/anime' },
       '/anime': { page: '/anime' },
     };
   },
