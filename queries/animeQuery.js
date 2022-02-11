@@ -1,7 +1,7 @@
-import { gql } from "apollo-boost";
+import { gql } from 'graphql-request';
 
 export const GET_ANIMES = gql`
-  query($page: Int, $perPage: Int, $seasonYear: Int, $season: MediaSeason) {
+  query ($page: Int, $perPage: Int, $seasonYear: Int, $season: MediaSeason) {
     Page(page: $page, perPage: $perPage) {
       pageInfo {
         total

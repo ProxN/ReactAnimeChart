@@ -1,14 +1,14 @@
 exports.Season = () => {
   const month = new Date().getMonth();
-  let season = "";
+  let season = '';
   if (month < 3) {
-    season = "WINTER";
+    season = 'winter';
   } else if (month < 6) {
-    season = "SPRING";
+    season = 'spring';
   } else if (month < 9) {
-    season = "SUMMER";
+    season = 'summer';
   } else {
-    season = "FALL";
+    season = 'fall';
   }
   return season;
 };
