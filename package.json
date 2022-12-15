@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "convert-seconds-to-human": "1.0.0",
-    "express": "^4.17.2",
+    "express": "^4.17.3",
     "global": "^4.4.0",
     "graphql": "^16.3.0",
     "graphql-request": "^4.0.0",
